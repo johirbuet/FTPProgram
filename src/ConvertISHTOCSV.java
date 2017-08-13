@@ -8,13 +8,10 @@ public class ConvertISHTOCSV {
 		File [] files = folder.listFiles();
 		int count =0;
 		for(File f : files){
-			if(count==10){
-				break;
-			}
 			System.out.println(f.getName());
 			try {
-				Process p = Runtime.getRuntime().exec("java /Users/mislam/Desktop/Data/ish/2016_txt/ishJava /Users/mislam/Desktop/Data/ish/2016_txt/ishJava/"+
-										f.getName()+" /Users/mislam/Desktop/Data/ish/2016_txt/ishJava/"+f.getName()+".csv");
+				Process p = Runtime.getRuntime().exec("java ishJava /Users/mislam/Desktop/Data/ish/2016_txt/"+
+										f.getName()+" /Users/mislam/Desktop/Data/ish/2016_csv/"+f.getName()+".csv");
 				count++;
 			} catch (IOException e) {
 				e.printStackTrace();
